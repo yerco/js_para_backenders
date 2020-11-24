@@ -29,7 +29,7 @@ Los cupos son limitados y ocuparemos distintos criterios para llenar las vacante
 
 ### Contacto
 
-Enviame correo a yerco@hotmail.com explicando hasta qué punto cumples con los pre-requisitos.
+Enviame un correo a yerco@hotmail.com explicando hasta qué punto cumples con los pre-requisitos.
 Es muy probable que recibas un snippet de código y tengas que responder algunas preguntas para ver si estás en condiciones de asumir este desafío.
 
 Te espero en clases ;)
