@@ -1,0 +1,71 @@
+{% extends 'animales_base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'animales/animales.css' %}">
+{% endblock %}
+
+{% block login %}
+    {% if user.is_authenticated %}
+        Welcome, {{ user.username }}.
+        <p><a href="{% url 'logout' %}">Log Out</a></p>
+    {% else %}
+        <p>Please log in.<a href="{% url 'login' %}">Log In</a></p>
+        <p>Or create an account <a href="{% url 'signup' %}">here</a></p>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5">
+                <table class="table table-striped js-rep-log-table">
+                    <thead>
+                    <th>Especie</th>
+                    <th>Nombre</th>
+                    <th>Numero</th>
+                    <th>Comida (sacos/dia)</th>
+                    </thead>
+                    <tbody>
+                    {% for animal in animales %}
+                        <tr>
+                            <td>{{ animal.especie }}</td>
+                            <td>{{ animal.nombre }}</td>
+                            <td>{{ animal.numero }}</td>
+                            <td>{{ animal.comida }}</td>
+                        </tr>
+                    {% endfor %}
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td><b>Total:</b></td>
+                        <td><b>{{ total_comida }}</b></td>
+                    </tr>
+                    </tbody>
+                </table>
+            {% include "animales/animales_form.html" %}
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5">
+                <h3><i>Tabla de alimentadores</i></h3>
+                <table class="table table-striped">
+                    <thead>
+                    <th>Humano</th>
+                    <th>Sacos de comida</th>
+                    </thead>
+                    <tbody>
+                        {% for nombre, cantidad in alimentadores.items %}
+                            <tr>
+                                <td>{{ nombre }}</td>
+                                <td>{{ cantidad }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
+{% endblock %}
+
