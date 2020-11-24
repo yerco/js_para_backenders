@@ -1,4 +1,4 @@
-## Curso JS para desarroladores de backend
+## Curso JS para desarrolladores de backend
 
 Este curso esta enfocado la adquisición de habilidades en javascript para programadores con conocimientos de backend.
 
