@@ -2,7 +2,7 @@
 
 ## Backend básico
 
-Autenticación/Autorización tomada fundaentalmente 
+Autenticación/Autorización tomada fundamentalmente 
 desde https://learndjango.com/tutorials/django-signup-tutorial
 
 ## DB checking
