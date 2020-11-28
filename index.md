@@ -1,6 +1,6 @@
 ## Curso cápsula: conceptos de backend y JS
 
-Este curso de nivel básico/intermedio busca repasar conceptos de backend y practicar conceptos de JS.
+Este curso gratuito de nivel básico/intermedio busca repasar conceptos de backend y practicar conceptos de JS.
 
 El backend que usaremos está hecho en Django, explicaremos conceptos de backend y utilización de JS para sacarle provecho a este backend desde el frontend.
 
