@@ -34,6 +34,8 @@ Sugerencia `admin/admin`
 ## Participantes
 - Yerco
 - Feña
+- Francisco
+- Jonathan
 - Guido
 - Manuel
 - Sebastian
