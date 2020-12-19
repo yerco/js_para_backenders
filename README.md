@@ -31,3 +31,6 @@ Sugerencia `admin/admin`
 >>> user.save()
 ```
 
+## Participantes
+- Yerco
+
