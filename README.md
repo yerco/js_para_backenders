@@ -40,3 +40,4 @@ Sugerencia `admin/admin`
 - Sebastian
 - Fernando Noguera V.
 
+Faltan participantes :O los necesitamos a todos aquí ;)
