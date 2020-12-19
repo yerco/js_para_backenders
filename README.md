@@ -36,3 +36,4 @@ Sugerencia `admin/admin`
 - Guido
 - Manuel
 - Sebastian
+- Fernando Noguera V.
