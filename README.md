@@ -34,3 +34,8 @@ Sugerencia `admin/admin`
 ## Participantes
 - Yerco
 - Francisco
+- Guido
+- Manuel
+- Sebastian
+- Fernando Noguera V.
+
