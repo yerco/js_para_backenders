@@ -33,4 +33,10 @@ Sugerencia `admin/admin`
 
 ## Participantes
 - Yerco
+- Francisco
+- Guido
+- Manuel
+- Jonathan
+- Sebastian
+- Fernando Noguera V.
 
