@@ -7,6 +7,17 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
 {% endblock %}
 
+{% block javascripts %}
+    {{ block.super }}
+    <script>
+      $(document).ready(function() {
+        $('.js-delete-row').on('click', function () {
+          console.log("Delete Row");
+        });
+      });
+    </script>
+{% endblock %}
+
 {% block login %}
     {% if user.is_authenticated %}
         Welcome, {{ user.username }}.
@@ -37,7 +48,7 @@
                             <td>{{ animal.comida }}</td>
                             <td>
                                 <a href="#" class="js-delete-row">
-                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-trash"></span>
                                 </a>
                             </td>
                         </tr>
