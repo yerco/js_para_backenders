@@ -34,3 +34,5 @@ Sugerencia `admin/admin`
 ## Participantes
 - Yerco
 - Guido
+- Manuel
+
