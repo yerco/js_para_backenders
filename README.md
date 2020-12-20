@@ -41,3 +41,4 @@ Sugerencia `admin/admin`
 - Fernando Noguera V.
 - Verónica Nizza
 
+Faltan participantes :O los necesitamos a todos aquí ;)
