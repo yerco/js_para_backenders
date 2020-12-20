@@ -33,10 +33,11 @@ Sugerencia `admin/admin`
 
 ## Participantes
 - Yerco
-- Feña
 - Francisco
-- Jonathan
 - Guido
 - Manuel
+- Jonathan
 - Sebastian
 - Fernando Noguera V.
+- Verónica Nizza
+- Feña
