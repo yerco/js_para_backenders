@@ -39,4 +39,5 @@ Sugerencia `admin/admin`
 - Jonathan
 - Sebastian
 - Fernando Noguera V.
-- Verónica
+- Verónica Nizza
+
