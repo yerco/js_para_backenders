@@ -37,6 +37,7 @@ Sugerencia `admin/admin`
 - Sebastián
 - Jonathan
 - Guido
+- Manuel
+- Jonathan
 - Francisco
 - Verónica Nizza
-- Manuel
