@@ -38,6 +38,5 @@ Sugerencia `admin/admin`
 - Jonathan
 - Guido
 - Manuel
-- Jonathan
 - Francisco
 - Verónica Nizza
