@@ -35,3 +35,8 @@ Sugerencia `admin/admin`
 - Jericho
 - Feña
 - Sebastián
+- Jonathan
+- Guido
+- Francisco
+- Verónica Nizza
+- Manuel
