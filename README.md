@@ -35,3 +35,4 @@ Sugerencia `admin/admin`
 - Jericho
 - Feña
 - Guido
+- Verónica Nizza
