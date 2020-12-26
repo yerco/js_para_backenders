@@ -34,3 +34,4 @@ Sugerencia `admin/admin`
 ## Participantes
 - Jericho
 - Feña
+- Jonathan
