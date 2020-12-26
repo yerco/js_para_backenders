@@ -36,3 +36,6 @@ Sugerencia `admin/admin`
 - Feña
 - Jonathan
 - Guido
+- Francisco
+- Verónica Nizza
+
