@@ -10,11 +10,15 @@
 {% block javascripts %}
     {{ block.super }}
     <script>
-      $(document).ready(function() {
-        $('.js-delete-row').on('click', function () {
-          console.log("Delete Row");
-        });
-      });
+        $(document).ready(function () {
+            $('.js-delete-row').on('click', function () {
+                console.log('Delete Row');
+            });
+
+            $('.js-animales-table').on('click', function  () {
+                console.log("Click en Fila");
+            })
+        })
     </script>
 {% endblock %}
 
@@ -32,7 +36,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-5">
-                <table class="table table-striped js-rep-log-table">
+                <table class="table table-striped js-animales-table">
                     <thead>
                     <th>Especie</th>
                     <th>Nombre</th>
