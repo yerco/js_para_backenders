@@ -32,11 +32,4 @@ Sugerencia `admin/admin`
 ```
 
 ## Participantes
-- Jericho
-- Feña
-- Sebastián
-- Jonathan
-- Guido
-- Manuel
-- Francisco
-- Verónica Nizza
+1.- Jericho
