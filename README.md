@@ -32,8 +32,8 @@ Sugerencia `admin/admin`
 ```
 
 ## Participantes
-1.- Jericho
-2.- Jonathan
+1.- Jericho  
+2.- Jonathan  
 3.- Guido el lateral derecho
 4.- Feña
 5.- Verónica
