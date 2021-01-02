@@ -32,25 +32,13 @@ Sugerencia `admin/admin`
 ```
 
 ## Participantes
-1.- Jericho  
-2.- Jonathan  
-<<<<<<< HEAD
-3.- Guido el lateral derecho    
-=======
-3.- Guido el lateral derecho  
->>>>>>> 37f6f533878987b224b4bd18b21ca0370fb1ad21
+1.- Jericho   
+2.- Jonathan   
+3.- Guido el lateral derecho     
 4.- Feña   
-5.- Verónica  
-6.- Francisco  
-<<<<<<< HEAD
-7.- Sebastián  
-8.- Fernando Noguera  
+5.- Verónica   
+6.- Francisco   
+7.- Sebastián   
+8.- Fernando Noguera     
 9.- Esteban  
 10.- Manuel  
-=======
-7.- Sebastián
-8.- Fernando Noguera
-9.- Esteban
-10.- Manuel
-11.- Fantasma
->>>>>>> 47cf665250d8cfa5420e19350ea8d46e66cfabc2
