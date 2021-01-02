@@ -38,7 +38,15 @@ Sugerencia `admin/admin`
 4.- Feña   
 5.- Verónica  
 6.- Francisco  
+<<<<<<< HEAD
 7.- Sebastián  
 8.- Fernando Noguera  
 9.- Esteban  
 10.- Manuel  
+=======
+7.- Sebastián
+8.- Fernando Noguera
+9.- Esteban
+10.- Manuel
+11.- Fantasma
+>>>>>>> 47cf665250d8cfa5420e19350ea8d46e66cfabc2
