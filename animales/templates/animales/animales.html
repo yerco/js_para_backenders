@@ -11,11 +11,18 @@
     {{ block.super }}
     <script>
         $(document).ready(function () {
-            $('.js-delete-row').on('click', function () {
+            let $table = $('.js-animales-table');
+
+            $('.js-delete-row').on('click', function (e) {
                 console.log('Delete Row');
+                $(e.target).addClass('text-danger');
+
+
+                e.preventDefault();
+                e.stopPropagation();
             });
 
-            $('.js-animales-table').on('click', function  () {
+            $table.on('click', function  () {
                 console.log("Click en Fila");
             })
         })
