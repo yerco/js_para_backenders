@@ -34,3 +34,4 @@ Sugerencia `admin/admin`
 ## Participantes
 1.- Jericho
 2.- Jonathan
+3.- Guido el lateral derecho
