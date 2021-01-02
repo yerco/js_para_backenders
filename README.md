@@ -39,3 +39,4 @@ Sugerencia `admin/admin`
 5.- Verónica
 6.- Francisco
 7.- Sebastián
+8.- Fernando Noguera
