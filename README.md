@@ -42,3 +42,4 @@ Sugerencia `admin/admin`
 8.- Fernando Noguera
 9.- Esteban
 10.- Manuel
+11.- Fantasma
