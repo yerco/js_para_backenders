@@ -35,10 +35,10 @@ Sugerencia `admin/admin`
 1.- Jericho  
 2.- Jonathan  
 3.- Guido el lateral derecho  
-4.- Feña  
+4.- Feña   
 5.- Verónica
-6.- Francisco
-7.- Sebastián  
-8.- Fernando Noguera  
+6.- Francisco  
+7.- Sebastián
+8.- Fernando Noguera
 9.- Esteban
 10.- Manuel
