@@ -34,11 +34,16 @@ Sugerencia `admin/admin`
 ## Participantes
 1.- Jericho  
 2.- Jonathan  
-3.- Guido el lateral derecho  
+3.- Guido el lateral derecho
 4.- Feña
+<<<<<<< HEAD
 5.- Verónica
 6.- Francisco  
+=======
+5.- Verónica  
+6.- Francisco
+>>>>>>> 9c4bdd21278abb1f2d6b3ebd5c098429abbe6387
 7.- Sebastián
-8.- Fernando Noguera  
+8.- Fernando Noguera
 9.- Esteban
 10.- Manuel
