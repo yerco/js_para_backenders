@@ -15,11 +15,13 @@
 
             $('.js-delete-row').on('click', function (e) {
                 console.log('Delete Row');
-                $(e.target).addClass('text-danger');
-
+                $(this).addClass('text-danger');
+                $(this).find('.fa')
+                    .removeClass('fa-trash')
+                    .addClass('fa-spinner')
+                    .addClass('fa-spin');
 
                 e.preventDefault();
-                e.stopPropagation();
             });
 
             $table.on('click', function  () {
