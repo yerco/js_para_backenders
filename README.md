@@ -32,5 +32,7 @@ Sugerencia `admin/admin`
 ```
 
 ## Participantes
+1.- Yerco  
+2.- Jonathan   
+7.- Verónica Nizza  
 
-2.- Jonathan  
