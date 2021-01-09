@@ -33,3 +33,4 @@ Sugerencia `admin/admin`
 
 ## Participantes
 
+7.- Verónica Nizza  
