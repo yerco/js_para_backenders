@@ -34,3 +34,4 @@ Sugerencia `admin/admin`
 ## Participantes
 1-. Yerco  
 6-. Guido  
+7.- Verónica Nizza
