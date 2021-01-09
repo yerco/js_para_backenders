@@ -34,9 +34,8 @@ Sugerencia `admin/admin`
 ## Participantes
 
 1.- Yerco  
-2.- Jonathan  
-6-. Guido 
-7.- Verónica Nizza  
-
-
+2.- Jonathan   
+6-. Guido  
+7.- Verónica Nizza       
+8.- Fernando Noguera    
 
