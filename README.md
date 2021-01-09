@@ -35,9 +35,9 @@ Sugerencia `admin/admin`
 1.- Jericho  
 2-  Verónica   
 3-. Guido  
-5.- Jonathan 
-4.- Fernando Noguera    
-6.- Feña   
-6.5.- Sebastián  
-7.- Francisco
+4.- Fernando Noguera  
+5.- Jonathan  
+6.- Feña  
+6.5.- Sebastián    
+7.- Francisco  
 10.- Manuel Cabezas 
