@@ -33,6 +33,7 @@ Sugerencia `admin/admin`
 
 ## Participantes
 1.- Jericho  
+3-. Guido  
 5.- Jonathan 
 4.- Fernando Noguera  
 5.- Jonathan  
