@@ -32,6 +32,8 @@ Sugerencia `admin/admin`
 ```
 
 ## Participantes
-1.- Yerco  
-7.- Verónica Nizza     
-8.- Fernando Noguera  
+<<<<<<< HEAD
+1.- Yerco    
+6-. Guido  
+7.- Verónica Nizza       
+8.- Fernando Noguera    
