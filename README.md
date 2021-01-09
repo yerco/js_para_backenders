@@ -34,8 +34,10 @@ Sugerencia `admin/admin`
 ## Participantes
 1.- Jericho  
 2-  Verónica   
-4.- Fernando Noguera   
-5.- Jonathan  
+3-. Guido  
+5.- Jonathan 
+4.- Fernando Noguera    
 6.- Feña   
 6.5.- Sebastián  
-7.- Francisco 
+7.- Francisco
+10.- Manuel Cabezas 
