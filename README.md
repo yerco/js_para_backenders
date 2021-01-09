@@ -34,6 +34,8 @@ Sugerencia `admin/admin`
 ## Participantes
 1.- Jericho  
 3.- Sebastián  
+5.- Jonathan 
 4.- Fernando Noguera  
 5.- Jonathan  
+6.- Feña
 7.- Francisco 
