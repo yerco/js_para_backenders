@@ -34,6 +34,7 @@ Sugerencia `admin/admin`
 ## Participantes
 1-. Yerko  
 3.- Sebastián  
+4.- Manuel  
 6-. Guido  
 7.- Verónica Nizza  
 8.- Fernando Noguera    
