@@ -32,7 +32,6 @@ Sugerencia `admin/admin`
 ```
 
 ## Participantes
-<<<<<<< HEAD
 1.- Yerco    
 6-. Guido  
 7.- Verónica Nizza       
