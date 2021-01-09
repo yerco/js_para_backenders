@@ -32,6 +32,7 @@ Sugerencia `admin/admin`
 ```
 
 ## Participantes
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 1-. Yerko
@@ -42,5 +43,8 @@ Sugerencia `admin/admin`
 
 6-. Guido
 =======
+=======
+1.- Yerco 
+>>>>>>> 651d2fa82e6c4b82fcd38d93e6f4a989d20d1124
 7.- Verónica Nizza  
 >>>>>>> 29efb38b0957328a9c04d0e877625cd64ea5ccd1
