@@ -33,6 +33,7 @@ Sugerencia `admin/admin`
 
 ## Participantes
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 3.- Francisco
 7.- Verónica Nizza  
@@ -40,3 +41,10 @@ Sugerencia `admin/admin`
 1-. Yerko
 6-. Guido  
 >>>>>>> 5ffbb022eb413dba7251b2c97fbb7d38275300f6
+=======
+1-. Yerko  
+3.- Sebastián  
+6-. Guido  
+7.- Verónica Nizza  
+8.- Fernando Noguera    
+>>>>>>> ebb830af30a1f5be2227a9178d23b28761342403
