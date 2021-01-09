@@ -32,7 +32,19 @@ Sugerencia `admin/admin`
 ```
 
 ## Participantes
+<<<<<<< HEAD
 1.- Yerco  
 2.- Jonathan   
+7.- Verónica Nizza  
+
+
+
+
+
+6-. Guido
+=======
+=======
+1.- Yerco 
+
 7.- Verónica Nizza  
 
