@@ -33,5 +33,6 @@ Sugerencia `admin/admin`
 
 ## Participantes
 1.- Jericho  
+3.- Sebastián  
 5.- Jonathan  
 
