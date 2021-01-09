@@ -35,8 +35,9 @@ Sugerencia `admin/admin`
 
 1-. Yerco  
 2-. Jonathan  
-3.- Sebastián  
-3.- Francisco  
+3- Francisco  
+4.- Manuel  
+5.- Sebastián
 6-. Guido  
 7.- Verónica Nizza  
 8.- Fernando Noguera    
