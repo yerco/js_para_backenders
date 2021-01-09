@@ -32,7 +32,8 @@ Sugerencia `admin/admin`
 ```
 
 ## Participantes
-1-. Yerko  
+1-. Yerco  
+2-. Jonathan  
 3.- Sebastián  
 4.- Manuel  
 6-. Guido  
