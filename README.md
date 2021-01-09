@@ -33,12 +33,10 @@ Sugerencia `admin/admin`
 
 ## Participantes
 
-1-. Yerco  
-2-. Jonathan  
-3- Francisco  
+1.- Yerco  
+2.- Jonathan  
+3.- Francisco  
 4.- Manuel  
-5.- Sebastián
-4.- Manuel 
 5.- Sebastián  
 6-. Guido  
 7.- Verónica Nizza  
