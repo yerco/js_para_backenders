@@ -32,5 +32,5 @@ Sugerencia `admin/admin`
 ```
 
 ## Participantes
-1-. Yerko  
+1-. Yerco  
 6-. Guido  
