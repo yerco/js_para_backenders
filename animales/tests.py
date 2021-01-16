@@ -1,3 +1,5 @@
+import json
+
 from django.test import TestCase, Client
 from urllib.parse import urlencode
 
@@ -39,3 +41,16 @@ class AnimalesTestCase(TestCase):
                          content_type="application/x-www-form-urlencoded")
         foca = Animales.objects.get(especie='Foca')
         self.assertEqual('Foca', foca.especie)
+
+    def test_borrar_fila_de_tabla_animales(self):
+        perros = Animales.objects.get(especie='Malamute', nombre='Los Jacos')
+        self.assertEqual(perros.id, 1)
+        perros = Animales.objects.filter(especie='Malamute')
+        self.assertEqual(1, perros.count())
+        response = self.client.post('/animales/delete/1')
+        json_response = json.loads(response.content)
+        self.assertEqual(1, json_response['row_deleted'])
+        self.assertEquals(200, response.status_code)
+        perros = Animales.objects.filter(especie='Malamute')
+        # has been deleted
+        self.assertEquals(0, perros.count())

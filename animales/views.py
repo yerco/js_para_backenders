@@ -1,4 +1,4 @@
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
 from django.contrib.auth import get_user_model
 
@@ -56,3 +56,13 @@ def add_animal(request):
         'alimentadores': alimentadores
         }
     )
+
+
+def delete_animal(request, id):
+    if request.method == 'POST':
+        row = Animales.objects.get(id=id)
+        row.delete()
+        return JsonResponse({'row_deleted': id})
+    else:
+        return JsonResponse({'message': 'method not allowed'})
+

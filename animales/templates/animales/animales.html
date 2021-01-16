@@ -21,6 +21,22 @@
                     .addClass('fa-spinner')
                     .addClass('fa-spin');
 
+                let deleteUrl = $(this).data('url');
+                $.ajax({
+                    url: deleteUrl,
+                    method: 'POST',
+                    data: { csrfmiddlewaretoken: '{{ csrf_token }}' }
+                })
+                .done(function() {
+                    console.log('borrado ' + deleteUrl)
+                })
+                .fail(function() {
+                    console.log('error')
+                })
+                .always(function() {
+                    console.log('completado')
+                });
+
                 e.preventDefault();
             });
 
@@ -55,14 +71,15 @@
                     </thead>
                     <tbody>
                     {% for animal in animales %}
-                        <tr>
+                        <tr data-comida="{{ animal.comida }}">
                             <td>{{ animal.id }}</td>
                             <td>{{ animal.especie }}</td>
                             <td>{{ animal.nombre }}</td>
                             <td>{{ animal.numero }}</td>
                             <td>{{ animal.comida }}</td>
                             <td>
-                                <a href="#" class="js-delete-row">
+                                <a href="#" class="js-delete-row"
+                                    data-url="{% url 'delete_animal' id=animal.id %}">
                                     <span class="fa fa-trash"></span>
                                 </a>
                             </td>
