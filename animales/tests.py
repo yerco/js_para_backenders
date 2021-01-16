@@ -22,17 +22,18 @@ class AnimalesTestCase(TestCase):
         user = User.objects.create(username='testuser')
         user.set_password('12345')
         user.save()
+        self.client.login(username='testuser', password='12345')
 
-    def test_validar_form(self) -> None:
+    def test_user_is_able_to_login(self) -> None:
         logged_in = self.client.login(username='testuser', password='12345')
         self.assertEqual(True, logged_in)
+
+    def test_validar_form(self) -> None:
         data = {'especie': 'Focas', 'nombre': 'Los Manolos', 'numero': 3, 'comida': 2, 'user_id': 1}
         form = AnimalForm(data=data)
         self.assertTrue(form.is_valid())
 
     def test_crear_fila_de_animales(self):
-        logged_in = self.client.login(username='testuser', password='12345')
-        self.assertEqual(True, logged_in)
         data = {'especie': 'Foca', 'nombre': 'Las Focas', 'numero': 3, 'comida': 2, 'user_id': 1}
         self.client.post("/animales/", urlencode(data),
                          content_type="application/x-www-form-urlencoded")
