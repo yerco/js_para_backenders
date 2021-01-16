@@ -32,12 +32,13 @@ Sugerencia `admin/admin`
 ```
 
 ## Participantes
-1.- Jericho  
-2-  Verónica   
-3-. Guido  
-4.- Fernando Noguera  
-5.- Jonathan  
-6.- Feña  
-6.5.- Sebastián    
-7.- Francisco  
-10.- Manuel Cabezas 
+
+1.- Yerco  
+2.- Jonathan  
+3.- Francisco  
+4.- Manuel  
+5.- Sebastián  
+6-. Guido  
+7.- Verónica Nizza  
+8.- Fernando Noguera    
+9.- Feña  
