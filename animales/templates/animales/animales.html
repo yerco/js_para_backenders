@@ -47,6 +47,7 @@
             <div class="col-sm-5">
                 <table class="table table-striped js-animales-table">
                     <thead>
+                    <th>Id</th>
                     <th>Especie</th>
                     <th>Nombre</th>
                     <th>Numero</th>
@@ -55,6 +56,7 @@
                     <tbody>
                     {% for animal in animales %}
                         <tr>
+                            <td>{{ animal.id }}</td>
                             <td>{{ animal.especie }}</td>
                             <td>{{ animal.nombre }}</td>
                             <td>{{ animal.numero }}</td>
