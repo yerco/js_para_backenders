@@ -1,7 +1,7 @@
 let AnimalesApp = {
     initialize: function($wrapper) {
         this.$wrapper = $wrapper;
-
+        Helper.initialize(this.$wrapper);
         this.$wrapper.find('tbody tr').on(
             'click',
             this.handleRowClick
@@ -17,15 +17,16 @@ let AnimalesApp = {
     },
     handleComidaDelete: function (e) {
         e.preventDefault();
+        let $link = $(e.currentTarget);
 
-        $(this).addClass('text-danger');
-        $(this).find('.fa')
+        $link.addClass('text-danger');
+        $link.find('.fa')
             .removeClass('fa-trash')
             .addClass('fa-spinner')
             .addClass('fa-spin');
-        let deleteUrl = $(this).data('url');
-        let $row = $(this).closest('tr');
-        let $totalComida = AnimalesApp.$wrapper.find('.js-total-comida');
+        let deleteUrl = $link.data('url');
+        let $row = $link.closest('tr');
+        let $totalComida = this.$wrapper.find('.js-total-comida');
         let newTotal = parseInt($totalComida.html()) - parseInt($row.data('comida'));
         $.ajax({
             url: deleteUrl,
@@ -35,8 +36,8 @@ let AnimalesApp = {
             .done(function() {
                 $row.fadeOut("slow", function() {
                     $(this).remove();
-                    AnimalesApp.updateTotalComida();
-                })
+                    this.updateTotalComida;
+                }.bind(this))
             })
             .fail(function() {
                 console.log('error')
@@ -46,15 +47,27 @@ let AnimalesApp = {
             });
     },
     updateTotalComida: function() {
-        let total = 0;
+        this.$wrapper.find('.js-total-comida').html(
+            Helper.calculateTotalComida()
+        );
+    }
+};
+
+/**
+ * pseudo private not meant to be called from outside
+ */
+let Helper = {
+    initialize: function($wrapper) {
+        this.$wrapper = $wrapper;
+    },
+    calculateTotalComida: function () {
+        let totalComida = 0;
         this.$wrapper.find('tbody tr').each(function() {
             if (undefined !== $(this).data('comida')) {
-                total += parseInt($(this).data('comida'));
+                totalComida += parseInt($(this).data('comida'));
             }
         });
-        this.$wrapper.find('.js-total-comida').html(total);
+
+        return totalComida;
     },
-    whatIsThis: function(saludo) {
-        console.log(this, saludo);
-    }
 };
