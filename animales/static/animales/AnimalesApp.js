@@ -28,7 +28,7 @@ let AnimalesApp = {
 
         let deleteUrl = $link.data('url');
         let $row = $link.closest('tr');
-        //let that = this;
+        let that = this;
 
         $.ajax({
             url: deleteUrl,
