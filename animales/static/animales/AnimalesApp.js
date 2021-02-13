@@ -2,6 +2,8 @@ let AnimalesApp = {
     initialize: function($wrapper) {
         this.$wrapper = $wrapper;
 
+        Helper.initialize($wrapper);
+
         this.$wrapper.find('tbody tr').on(
             'click',
             this.handleRowClick.bind(this)
@@ -50,9 +52,15 @@ let AnimalesApp = {
             });
     },
     updateTotalComida: function () {
-        this.$wrapper.find('.js-total-comida').html(this._calculateTotalComida());
+        this.$wrapper.find('.js-total-comida').html(Helper.calculateTotalComida());
+    }
+};
+
+let Helper = {
+    initialize: function($wrapper) {
+        this.$wrapper = $wrapper;
     },
-    _calculateTotalComida: function(){
+    calculateTotalComida: function(){
         let total = 0;
         this.$wrapper.find('tbody tr').each(function () {
             if (undefined !== $(this).data('comida')) {
@@ -61,4 +69,4 @@ let AnimalesApp = {
         });
         return total;
     }
-};
+}
