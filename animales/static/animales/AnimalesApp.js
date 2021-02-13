@@ -57,18 +57,19 @@
         }
     };
 
-    let Helper = {
-        initialize: function ($wrapper) {
+    let Helper = {};
+
+    Helper.initialize = function ($wrapper) {
             this.$wrapper = $wrapper;
-        },
-        calculateTotalComida: function () {
-            let total = 0;
-            this.$wrapper.find('tbody tr').each(function () {
-                if (undefined !== $(this).data('comida')) {
-                    total += parseInt($(this).data('comida'));
-                }
-            });
-            return total;
-        }
     }
+    Helper.calculateTotalComida = function () {
+        let total = 0;
+        this.$wrapper.find('tbody tr').each(function () {
+            if (undefined !== $(this).data('comida')) {
+                 total += parseInt($(this).data('comida'));
+            }
+        });
+        return total;
+    }
+
 })(window, jQuery);
