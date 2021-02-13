@@ -1,22 +1,23 @@
 let AnimalesApp = {
     initialize: function($wrapper) {
         this.$wrapper = $wrapper;
-        Helper.initialize(this.$wrapper);
+
         this.$wrapper.find('tbody tr').on(
             'click',
-            this.handleRowClick
+            this.handleRowClick.bind(this)
         )
 
         this.$wrapper.find('.js-delete-row').on(
             'click',
-            this.handleComidaDelete
+            this.handleComidaDelete.bind(this)
         )
     },
-    handleRowClick: function() {
-        console.log('Click en fila');
+    handleRowClick: function () {
+        console.log("Click en Fila");
     },
-    handleComidaDelete: function (e) {
+    handleComidaDelete: function(e) {
         e.preventDefault();
+
         let $link = $(e.currentTarget);
 
         $link.addClass('text-danger');
@@ -24,50 +25,35 @@ let AnimalesApp = {
             .removeClass('fa-trash')
             .addClass('fa-spinner')
             .addClass('fa-spin');
+
         let deleteUrl = $link.data('url');
         let $row = $link.closest('tr');
-        let $totalComida = this.$wrapper.find('.js-total-comida');
-        let newTotal = parseInt($totalComida.html()) - parseInt($row.data('comida'));
+        let that = this;
         $.ajax({
             url: deleteUrl,
             method: 'POST',
             data: { csrfmiddlewaretoken: csrftoken }
         })
             .done(function() {
-                $row.fadeOut("slow", function() {
+                $row.fadeOut('normal', function () {
                     $(this).remove();
-                    this.updateTotalComida;
-                }.bind(this))
+                    that.updateTotalComida();
+                });
             })
             .fail(function() {
-                console.log('error')
+                console.log("error");
             })
             .always(function() {
-                console.log('completado')
+                console.log("completado");
             });
     },
-    updateTotalComida: function() {
-        this.$wrapper.find('.js-total-comida').html(
-            Helper.calculateTotalComida()
-        );
-    }
-};
-
-/**
- * pseudo private not meant to be called from outside
- */
-let Helper = {
-    initialize: function($wrapper) {
-        this.$wrapper = $wrapper;
-    },
-    calculateTotalComida: function () {
-        let totalComida = 0;
-        this.$wrapper.find('tbody tr').each(function() {
+    updateTotalComida: function () {
+        let total = 0;
+        this.$wrapper.find('tbody tr').each(function () {
             if (undefined !== $(this).data('comida')) {
-                totalComida += parseInt($(this).data('comida'));
+                total += parseInt($(this).data('comida'));
             }
         });
-
-        return totalComida;
-    },
+        this.$wrapper.find('.js-total-comida').html(total);
+    }
 };
