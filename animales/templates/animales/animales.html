@@ -4,6 +4,47 @@
 {% block stylesheets %}
     {{ block.super }}
     <link rel="stylesheet" type="text/css" href="{% static 'animales/animales.css' %}">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+{% endblock %}
+
+{% block javascripts %}
+    {{ block.super }}
+    <script>
+        $(document).ready(function () {
+            let $table = $('.js-animales-table');
+
+            $('.js-delete-row').on('click', function (e) {
+                console.log('Delete Row');
+                $(this).addClass('text-danger');
+                $(this).find('.fa')
+                    .removeClass('fa-trash')
+                    .addClass('fa-spinner')
+                    .addClass('fa-spin');
+
+                let deleteUrl = $(this).data('url');
+                $.ajax({
+                    url: deleteUrl,
+                    method: 'POST',
+                    data: { csrfmiddlewaretoken: '{{ csrf_token }}' }
+                })
+                .done(function() {
+                    console.log('borrado ' + deleteUrl)
+                })
+                .fail(function() {
+                    console.log('error')
+                })
+                .always(function() {
+                    console.log('completado')
+                });
+
+                e.preventDefault();
+            });
+
+            $table.on('click', function  () {
+                console.log("Click en Fila");
+            })
+        })
+    </script>
 {% endblock %}
 
 {% block login %}
@@ -20,8 +61,9 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-5">
-                <table class="table table-striped js-rep-log-table">
+                <table class="table table-striped js-animales-table">
                     <thead>
+                    <th>Id</th>
                     <th>Especie</th>
                     <th>Nombre</th>
                     <th>Numero</th>
@@ -29,11 +71,18 @@
                     </thead>
                     <tbody>
                     {% for animal in animales %}
-                        <tr>
+                        <tr data-comida="{{ animal.comida }}">
+                            <td>{{ animal.id }}</td>
                             <td>{{ animal.especie }}</td>
                             <td>{{ animal.nombre }}</td>
                             <td>{{ animal.numero }}</td>
                             <td>{{ animal.comida }}</td>
+                            <td>
+                                <a href="#" class="js-delete-row"
+                                    data-url="{% url 'delete_animal' id=animal.id %}">
+                                    <span class="fa fa-trash"></span>
+                                </a>
+                            </td>
                         </tr>
                     {% endfor %}
                     <tr>

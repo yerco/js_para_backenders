@@ -31,3 +31,14 @@ Sugerencia `admin/admin`
 >>> user.save()
 ```
 
+## Participantes
+
+1.- Yerco  
+2.- Jonathan  
+3.- Francisco  
+4.- Manuel  
+5.- Sebastián  
+6-. Guido  
+7.- Verónica Nizza  
+8.- Fernando Noguera    
+9.- Feña  
