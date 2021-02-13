@@ -28,13 +28,15 @@ let AnimalesApp = {
 
         let deleteUrl = $link.data('url');
         let $row = $link.closest('tr');
-        let that = this;
+        //let that = this;
+
         $.ajax({
             url: deleteUrl,
             method: 'POST',
             data: { csrfmiddlewaretoken: csrftoken }
         })
-            .done(function() {
+            .done(function(data) {
+                console.log(data);
                 $row.fadeOut('normal', function () {
                     $(this).remove();
                     that.updateTotalComida();
