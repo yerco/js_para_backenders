@@ -1,4 +1,4 @@
-(function() {
+(function(window, $) {
     window.AnimalesApp = {
         initialize: function ($wrapper) {
             this.$wrapper = $wrapper;
@@ -71,4 +71,4 @@
             return total;
         }
     }
-})();
+})(window, jQuery);
