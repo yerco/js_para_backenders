@@ -28,7 +28,7 @@ let AnimalesApp = {
 
         let deleteUrl = $link.data('url');
         let $row = $link.closest('tr');
-        //let that = this;
+        let that = this;
 
         $.ajax({
             url: deleteUrl,
@@ -50,12 +50,15 @@ let AnimalesApp = {
             });
     },
     updateTotalComida: function () {
+        this.$wrapper.find('.js-total-comida').html(this._calculateTotalComida());
+    },
+    _calculateTotalComida: function(){
         let total = 0;
         this.$wrapper.find('tbody tr').each(function () {
             if (undefined !== $(this).data('comida')) {
                 total += parseInt($(this).data('comida'));
             }
         });
-        this.$wrapper.find('.js-total-comida').html(total);
+        return total;
     }
 };
