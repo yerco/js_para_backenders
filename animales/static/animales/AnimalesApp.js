@@ -2,8 +2,7 @@
     window.AnimalesApp = {
         initialize: function ($wrapper) {
             this.$wrapper = $wrapper;
-
-            Helper.initialize($wrapper);
+            this.helper = new Helper(this.$wrapper);
 
             this.$wrapper.find('tbody tr').on(
                 'click',
@@ -53,15 +52,16 @@
                 });
         },
         updateTotalComida: function () {
-            this.$wrapper.find('.js-total-comida').html(Helper.calculateTotalComida());
+            this.$wrapper.find('.js-total-comida').html(
+                this.helper.calculateTotalComida()
+            );
         }
     };
 
-    let Helper = {};
+    let Helper = function ($wrapper) {
+        this.$wrapper = $wrapper
+    };
 
-    Helper.initialize = function ($wrapper) {
-            this.$wrapper = $wrapper;
-    }
     Helper.calculateTotalComida = function () {
         let total = 0;
         this.$wrapper.find('tbody tr').each(function () {
