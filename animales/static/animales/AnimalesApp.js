@@ -62,7 +62,7 @@
         this.$wrapper = $wrapper
     };
 
-    Helper.calculateTotalComida = function () {
+    Helper.prototype.calculateTotalComida = function () {
         let total = 0;
         this.$wrapper.find('tbody tr').each(function () {
             if (undefined !== $(this).data('comida')) {
