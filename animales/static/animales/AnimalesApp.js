@@ -62,14 +62,16 @@
         this.$wrapper = $wrapper
     };
 
-    Helper.prototype.calculateTotalComida = function () {
-        let total = 0;
-        this.$wrapper.find('tbody tr').each(function () {
-            if (undefined !== $(this).data('comida')) {
-                 total += parseInt($(this).data('comida'));
-            }
-        });
-        return total;
-    }
+    $.extend(Helper.prototype,{
+        calculateTotalComida : function () {
+            let total = 0;
+            this.$wrapper.find('tbody tr').each(function () {
+                if (undefined !== $(this).data('comida')) {
+                     total += parseInt($(this).data('comida'));
+                }
+            });
+            return total;
+        }
+    });
 
 })(window, jQuery);
