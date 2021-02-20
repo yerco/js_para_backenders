@@ -1,19 +1,21 @@
 (function(window, $) {
-    window.AnimalesApp = {
-        initialize: function ($wrapper) {
-            this.$wrapper = $wrapper;
-            this.helper = new Helper(this.$wrapper);
+    window.AnimalesApp = function ($wrapper) {
 
-            this.$wrapper.find('tbody tr').on(
-                'click',
-                this.handleRowClick.bind(this)
-            )
+        this.$wrapper = $wrapper;
+        this.helper = new Helper(this.$wrapper);
 
-            this.$wrapper.find('.js-delete-row').on(
-                'click',
-                this.handleComidaDelete.bind(this)
-            )
-        },
+        this.$wrapper.find('tbody tr').on(
+            'click',
+            this.handleRowClick.bind(this)
+        )
+
+        this.$wrapper.find('.js-delete-row').on(
+            'click',
+            this.handleComidaDelete.bind(this)
+        )
+    };
+
+    $.extend(window.AnimalesApp.prototype, {
         handleRowClick: function () {
             console.log("Click en Fila");
         },
@@ -56,13 +58,14 @@
                 this.helper.calculateTotalComida()
             );
         }
-    };
+    });
+
 
     let Helper = function ($wrapper) {
         this.$wrapper = $wrapper
     };
 
-    $.extend(Helper.prototype,{
+    $.extend(Helper.prototype, {
         calculateTotalComida : function () {
             let total = 0;
             this.$wrapper.find('tbody tr').each(function () {
