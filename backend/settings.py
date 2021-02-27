@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'animales',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -129,3 +131,8 @@ STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = '/animales'
 LOGOUT_REDIRECT_URL = 'home'
+
+# debug toolbar
+INTERNAL_IPS = [
+    '127.0.0.1',
+]

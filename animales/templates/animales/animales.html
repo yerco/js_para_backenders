@@ -13,8 +13,8 @@
     <script src="{% static 'animales/AnimalesApp.js' %}" type="text/javascript"></script>
     <script>
         $(document).ready(function () {
-            let $table = $('.js-animales-table');
-            let animalesApp = new AnimalesApp($table);
+            let $wrapper = $('.js-animales-table');
+            let animalesApp = new AnimalesApp($wrapper);
         });
     </script>
 {% endblock %}

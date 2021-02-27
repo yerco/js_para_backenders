@@ -13,6 +13,11 @@
             'click',
             this.handleComidaDelete.bind(this)
         )
+
+        this.$wrapper.find('.js-new-animales-form').on(
+            'submit',
+            this.handleNewFormSubmit.bind(this)
+        )
     };
 
     $.extend(window.AnimalesApp.prototype, {
@@ -57,6 +62,15 @@
             this.$wrapper.find('.js-total-comida').html(
                 this.helper.calculateTotalComida()
             );
+        },
+        handleNewFormSubmit: function (e) {
+            e.preventDefault();
+            let $form = $(e.currentTarget);
+            $.ajax({
+                url: $form.attr('action'),
+                method: 'POST',
+                data: $form.serialize()
+            })
         }
     });
 

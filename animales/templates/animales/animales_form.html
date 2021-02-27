@@ -1,19 +1,26 @@
 <div class="container">
-<form method="post">
-    {% csrf_token %}
-    {{ form.non_field_errors }}
-    <table>
-        <td class="add-param">{{ form.especie.label }}</td>
-        <td class="add-param">{{ form.especie }}</td>
-        <td class="add-param">{{ form.nombre.label }}</td>
-        <td class="add-param">{{ form.nombre }}</td>
-        <td class="add-param">{{ form.numero.label }}</td>
-        <td class="add-param">{{ form.numero }}</td>
-        <td class="add-param hidden">{{ form.comida.label }}</td>
-        <td class="add-param hidden">{{ form.comida }}</td>
-        <td class="add-param hidden">{{ form.user_id.label }}</td>
-        <td class="add-param hidden">{{ form.user_id }}</td>
-        <td class="add-param"><input type="submit" value="Submit"></td>
-    </table>
-</form>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <form method="post" class="js-new-animales-form">
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+                    <table>
+                        <td class="add-param">{{ form.especie.label }}</td>
+                        <td class="add-param">{{ form.especie }}</td>
+                        <td class="add-param">{{ form.nombre.label }}</td>
+                        <td class="add-param">{{ form.nombre }}</td>
+                        <td class="add-param">{{ form.numero.label }}</td>
+                        <td class="add-param">{{ form.numero }}</td>
+                        <td class="add-param hidden">{{ form.comida.label }}</td>
+                        <td class="add-param hidden">{{ form.comida }}</td>
+                        <td class="add-param hidden">{{ form.user_id.label }}</td>
+                        <td class="add-param hidden">{{ form.user_id }}</td>
+                        <td class="add-param"><input type="submit" value="Submit"></td>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <div class="col-sm-6"></div>
+    </div>
 </div>
