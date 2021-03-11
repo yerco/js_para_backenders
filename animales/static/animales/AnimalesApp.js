@@ -65,12 +65,7 @@
         },
         handleNewFormSubmit: function (e) {
             e.preventDefault();
-            let $form = $(e.currentTarget);
-            $.ajax({
-                url: $form.attr('action'),
-                method: 'POST',
-                data: $form.serialize()
-            })
+            console.log("enviando");
         }
     });
 
