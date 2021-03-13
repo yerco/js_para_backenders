@@ -69,7 +69,7 @@
         }
     });
 
-
+    
     let Helper = function ($wrapper) {
         this.$wrapper = $wrapper
     };
