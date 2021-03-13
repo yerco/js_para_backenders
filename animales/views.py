@@ -28,6 +28,9 @@ def add_animal(request):
                 user_id=user_id
             )
             animal.save()
+            if request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest':
+                return render(request, 'animales/animales_row.html', {
+                              'animal': animal})
             # Avoid submitting on refreshing page
             return HttpResponseRedirect('/animales')
         else:

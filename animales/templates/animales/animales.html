@@ -43,21 +43,10 @@
                     </thead>
                     <tbody>
                     {% for animal in animales %}
-                        <tr data-comida="{{ animal.comida }}">
-                            <td>{{ animal.id }}</td>
-                            <td>{{ animal.especie }}</td>
-                            <td>{{ animal.nombre }}</td>
-                            <td>{{ animal.numero }}</td>
-                            <td>{{ animal.comida }}</td>
-                            <td>
-                                <a href="#" class="js-delete-row"
-                                    data-url="{% url 'delete_animal' id=animal.id %}">
-                                    <span class="fa fa-trash"></span>
-                                </a>
-                            </td>
-                        </tr>
+                        {% include 'animales/animales_row.html' %}
                     {% endfor %}
-                    <tr>
+                    <tr class="js-new-row">
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td><b>Total:</b></td>
@@ -65,7 +54,9 @@
                     </tr>
                     </tbody>
                 </table>
-            {% include "animales/animales_form.html" %}
+                <div class="js-new-animales-form-wrapper">
+                    {% include "animales/animales_form.html" %}
+                </div>
             </div>
             <div class="col-sm-1"></div>
             <div class="col-sm-5">

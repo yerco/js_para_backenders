@@ -66,6 +66,23 @@
         handleNewFormSubmit: function (e) {
             e.preventDefault();
             console.log("enviando");
+            let $form = $(e.currentTarget);
+            let $tbody = this.$wrapper.find('tbody');
+            $.ajax({
+                url: $form.attr('action'),
+                method: 'POST',
+                data: $form.serialize()
+            })
+                .done(function(d) {
+                    console.log(d);
+                    $tbody.append(d);
+                })
+                .fail(function() {
+                    console.log("error");
+                })
+                .always(function() {
+                    console.log("complete");
+                });
         }
     });
 
