@@ -68,14 +68,15 @@
             console.log("enviando");
             let $form = $(e.currentTarget);
             let $tbody = this.$wrapper.find('tbody');
+            let that = this;
             $.ajax({
                 url: $form.attr('action'),
                 method: 'POST',
                 data: $form.serialize()
             })
                 .done(function(d) {
-                    console.log(d);
                     $tbody.append(d);
+                    that.updateTotalComida();
                 })
                 .fail(function() {
                     console.log("error");
