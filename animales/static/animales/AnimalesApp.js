@@ -4,18 +4,21 @@
         this.$wrapper = $wrapper;
         this.helper = new Helper(this.$wrapper);
 
-        this.$wrapper.find('tbody tr').on(
+        this.$wrapper.on(
             'click',
+            'tbody tr',
             this.handleRowClick.bind(this)
         )
 
-        this.$wrapper.find('.js-delete-row').on(
+        this.$wrapper.on(
             'click',
+            '.js-delete-row',
             this.handleComidaDelete.bind(this)
         )
 
-        this.$wrapper.find('.js-new-animales-form').on(
+        this.$wrapper.on(
             'submit',
+            '.js-new-animales-form',
             this.handleNewFormSubmit.bind(this)
         )
     };

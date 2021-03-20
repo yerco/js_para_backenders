@@ -1,9 +1,10 @@
-from django.http import HttpResponseRedirect, JsonResponse
+from django.http import HttpResponseRedirect, JsonResponse, HttpResponseBadRequest
 from django.shortcuts import render
 from django.contrib.auth import get_user_model
 
 from animales.forms import AnimalForm
 from animales.models import Animales
+import json
 
 
 def add_animal(request):
@@ -28,9 +29,7 @@ def add_animal(request):
                 user_id=user_id
             )
             animal.save()
-            if request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest':
-                return render(request, 'animales/animales_row.html', {
-                              'animal': animal})
+
             # Avoid submitting on refreshing page
             return HttpResponseRedirect('/animales')
         else:
@@ -69,3 +68,30 @@ def delete_animal(request, id):
     else:
         return JsonResponse({'message': 'method not allowed'})
 
+
+def new_animal(request):
+    data = request.POST
+    body = json.loads(request.body)
+    if not body:
+        return HttpResponseBadRequest()
+    else:
+        form = AnimalForm(body)
+        if form.is_valid():
+            especie = body['especie']
+            numero = body['numero']
+            if especie == 'Perro':
+                comida = 2 * numero
+            elif especie == 'Cocodrilo':
+                comida = 5 * numero
+                # else means especie == 'Gato':
+            else:
+                comida = numero
+            animal = Animales(
+                especie=especie, nombre=body["nombre"],
+                numero=numero, comida=comida,
+                user_id=body['user_id']
+            )
+            animal.save()
+            return JsonResponse({'id_saved': animal.id})
+        else:
+            return HttpResponseBadRequest()

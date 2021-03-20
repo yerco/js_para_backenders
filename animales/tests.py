@@ -54,3 +54,15 @@ class AnimalesTestCase(TestCase):
         perros = Animales.objects.filter(especie='Malamute')
         # has been deleted
         self.assertEquals(0, perros.count())
+
+    def test_nuevo_endpoint_para_nuevos_animales(self):
+        json_string = '{}'
+        json_data = json.loads(json_string)
+        response = self.client.post('/animales/new', json_data, content_type='application/json')
+        self.assertEqual(400, response.status_code)
+        json_string = '{"especie": "Perro", "nombre": "perro test", "numero": "2", "comida": "1", "user_id": "1000"}'
+        json_data = json.loads(json_string)
+        response = self.client.post('/animales/new', json_data, content_type='application/json')
+        animalitos = Animales.objects.all()
+        self.assertEqual(200, response.status_code)
+        self.assertEqual(2, len(animalitos))
