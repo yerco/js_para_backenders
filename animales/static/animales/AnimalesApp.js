@@ -9,8 +9,9 @@
             this.handleRowClick.bind(this)
         )
 
-        this.$wrapper.find('.js-delete-row').on(
+        this.$wrapper.on(
             'click',
+            '.js-delete-row',
             this.handleComidaDelete.bind(this)
         )
 
