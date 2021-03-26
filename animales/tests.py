@@ -82,5 +82,4 @@ class AnimalesTestCase(TestCase):
         otroAnimal = Animales.objects.filter(id=1)
         self.assertEqual("perro test", otroAnimal[0].nombre)
         respuesta = json.loads(response.content)
-        print(respuesta)
         self.assertEqual(json_data, respuesta)
