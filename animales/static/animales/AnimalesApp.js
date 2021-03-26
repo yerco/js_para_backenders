@@ -78,7 +78,7 @@
                 data: $form.serialize()
             })
                 .done(function(d) {
-                    $tbody.append(d);
+                    //$tbody.append(d);
                     that.updateTotalComida();
                 })
                 .fail(function() {

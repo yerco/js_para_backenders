@@ -95,3 +95,23 @@ def new_animal(request):
             return JsonResponse({'id_saved': animal.id})
         else:
             return HttpResponseBadRequest()
+
+
+def update_animal(request):
+    data = request.POST
+    body = json.loads(request.body)
+    Animales.objects.all().filter(id=body['id']).update(
+        especie=body['especie'],
+        nombre=body['nombre'],
+        numero=body['numero'],
+        comida=body['comida']
+    )
+    record = Animales.objects.all().filter(id=body['id'])[0]
+    return JsonResponse({
+        'id': record.id,
+        'especie': record.especie,
+        'nombre': record.nombre,
+        'numero': record.numero,
+        'comida': record.comida,
+        'user_id': record.user_id
+    })

@@ -16,7 +16,7 @@ class AnimalesTestCase(TestCase):
             especie="Malamute",
             nombre="Los Jacos",
             numero=3,
-            comida=10,
+            comida=6,
             user_id=1
         )
         animales.save()
@@ -66,3 +66,21 @@ class AnimalesTestCase(TestCase):
         animalitos = Animales.objects.all()
         self.assertEqual(200, response.status_code)
         self.assertEqual(2, len(animalitos))
+
+    def test_nuevo_endpoint_para_actualizar_records(self):
+        # get a record
+        unAnimal = Animales.objects.filter(id=1)
+        # check we have a record stored
+        self.assertEqual(1, len(unAnimal))
+        self.assertEqual("Los Jacos", unAnimal[0].nombre)
+        self.assertEqual(1, unAnimal[0].id)
+        json_string = '{"id": 1, "especie": "Perro", "nombre": "perro test", \
+                        "numero": 2, "comida": 4, "user_id": 1}'
+        json_data = json.loads(json_string)
+        response = self.client.post('/animales/update', json_data, content_type='application/json')
+        # Testing at DB level get updated record
+        otroAnimal = Animales.objects.filter(id=1)
+        self.assertEqual("perro test", otroAnimal[0].nombre)
+        respuesta = json.loads(response.content)
+        print(respuesta)
+        self.assertEqual(json_data, respuesta)
