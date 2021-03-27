@@ -98,7 +98,7 @@ def new_animal(request):
 
 
 def update_animal(request):
-    data = request.POST
+    print(request.body)
     body = json.loads(request.body)
     Animales.objects.all().filter(id=body['id']).update(
         especie=body['especie'],
@@ -106,7 +106,11 @@ def update_animal(request):
         numero=body['numero'],
         comida=body['comida']
     )
-    record = Animales.objects.all().filter(id=body['id'])[0]
+    try:
+        record = Animales.objects.all().filter(id=body['id'])[0]
+        record.save()
+    except:
+        return JsonResponse({'message': 'something went wrong'})
     return JsonResponse({
         'id': record.id,
         'especie': record.especie,

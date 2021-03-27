@@ -66,6 +66,8 @@ class AnimalesTestCase(TestCase):
         animalitos = Animales.objects.all()
         self.assertEqual(200, response.status_code)
         self.assertEqual(2, len(animalitos))
+        json_response = json.loads(response.content)
+        self. assertEqual(2, json_response["id_saved"])
 
     def test_nuevo_endpoint_para_actualizar_records(self):
         # get a record
@@ -74,12 +76,12 @@ class AnimalesTestCase(TestCase):
         self.assertEqual(1, len(unAnimal))
         self.assertEqual("Los Jacos", unAnimal[0].nombre)
         self.assertEqual(1, unAnimal[0].id)
-        json_string = '{"id": 1, "especie": "Perro", "nombre": "perro test", \
+        json_string = '{"id": 1, "especie": "Perro", "nombre": "juanito", \
                         "numero": 2, "comida": 4, "user_id": 1}'
         json_data = json.loads(json_string)
         response = self.client.post('/animales/update', json_data, content_type='application/json')
-        # Testing at DB level get updated record
+        # # Testing at DB level get updated record
         otroAnimal = Animales.objects.filter(id=1)
-        self.assertEqual("perro test", otroAnimal[0].nombre)
+        self.assertEqual("juanito", otroAnimal[0].nombre)
         respuesta = json.loads(response.content)
         self.assertEqual(json_data, respuesta)
