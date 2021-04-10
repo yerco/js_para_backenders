@@ -29,6 +29,12 @@
         )
     };
 
+    $.extend(window.AnimalesApp.prototype , {
+        _selectors: {
+            newAnimalForm: '.js-new-animales-form'
+        }
+    })
+
     $.extend(window.AnimalesApp.prototype, {
         handleRowClick: function () {
             console.log("Click en Fila");
@@ -91,6 +97,7 @@
                 headers: {"X-CSRFToken": csrftoken }
             })
                 .done(function(d) {
+                    that._clearForm();
                     console.log("ok");
                 })
                 .fail(function() {
@@ -133,12 +140,12 @@
                 .always(function() {
                     console.log("always");
                 });
-        }
+        },
+        _clearForm: function() {
+            $form = this.$wrapper.find(this._selectors.newAnimalForm);
+            $form[0].reset();
+        },
     });
-
-    // _clearForm: function() {
-    //
-    // }
     
     let Helper = function ($wrapper) {
         this.$wrapper = $wrapper
