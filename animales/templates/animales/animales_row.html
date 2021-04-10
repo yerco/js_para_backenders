@@ -1,9 +1,11 @@
-<tr data-comida="{{ animal.comida }}">
+<tr data-comida="{{ animal.comida }}"
+    class="js-update-row"
+    data-url="{% url 'update_animal' %}">
     <td>{{ animal.id }}</td>
-    <td>{{ animal.especie }}</td>
-    <td>{{ animal.nombre }}</td>
-    <td>{{ animal.numero }}</td>
-    <td>{{ animal.comida }}</td>
+    <td contenteditable="true">{{ animal.especie }}</td>
+    <td contenteditable="true">{{ animal.nombre }}</td>
+    <td contenteditable="true">{{ animal.numero }}</td>
+    <td contenteditable="true">{{ animal.comida }}</td>
     <td>
         <a href="#" class="js-delete-row"
            data-url="{% url 'delete_animal' id=animal.id %}">

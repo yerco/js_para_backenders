@@ -21,6 +21,12 @@
             '.js-new-animales-form',
             this.handleNewFormSubmit.bind(this)
         )
+
+        this.$wrapper.on(
+            'blur',
+            '.js-update-row',
+            this.handleRowUpdate.bind(this)
+        )
     };
 
     $.extend(window.AnimalesApp.prototype, {
@@ -70,16 +76,22 @@
             e.preventDefault();
             console.log("enviando");
             let $form = $(e.currentTarget);
+            let formData = {}
+            $.each($form.serializeArray(), function(key, fieldData) {
+                formData[fieldData.name] = fieldData.value;
+            })
             let $tbody = this.$wrapper.find('tbody');
             let that = this;
             $.ajax({
-                url: $form.attr('action'),
+                url: $form.data('url'),
                 method: 'POST',
-                data: $form.serialize()
+                data: JSON.stringify(formData),
+                dataType: "json",
+                contentType: "application/json",
+                headers: {"X-CSRFToken": csrftoken }
             })
                 .done(function(d) {
-                    //$tbody.append(d);
-                    that.updateTotalComida();
+                    console.log("ok");
                 })
                 .fail(function() {
                     console.log("error");
@@ -87,9 +99,46 @@
                 .always(function() {
                     console.log("complete");
                 });
+        },
+        handleRowUpdate: function(e) {
+            let $target = $(e.currentTarget);
+            let $row = $target.closest('tr');
+            let $values = $row[0].getElementsByTagName("td");
+            let data = {}
+            data.id = $values[0].innerHTML;
+            data.especie = $values[1].innerHTML;
+            data.nombre = $values[2].innerHTML;
+            data.numero = $values[3].innerHTML;
+            data.comida = $values[4].innerHTML
+            let that = this;
+            $.ajax({
+                url: $row.data('url'),
+                data: JSON.stringify(data),
+                method: 'POST',
+                dataType: "json",
+                contentType: "application/json",
+                headers: {"X-CSRFToken": csrftoken }
+            })
+                .done(function(d) {
+                    console.log("done");
+
+                    //console.log(that.helper.calculateTotalComida());
+                    that.$wrapper.find('.js-total-comida').html(
+                        that.helper.calculateTotalComida()
+                    );
+                })
+                .fail(function() {
+                    console.log("fail");
+                })
+                .always(function() {
+                    console.log("always");
+                });
         }
     });
 
+    // _clearForm: function() {
+    //
+    // }
     
     let Helper = function ($wrapper) {
         this.$wrapper = $wrapper
@@ -103,6 +152,7 @@
                      total += parseInt($(this).data('comida'));
                 }
             });
+
             return total;
         }
     });

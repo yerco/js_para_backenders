@@ -92,7 +92,11 @@ def new_animal(request):
                 user_id=body['user_id']
             )
             animal.save()
-            return JsonResponse({'id_saved': animal.id})
+            return JsonResponse({
+                'id': animal.id, 'especie': animal.especie,
+                'nombre': animal.nombre, 'numero': animal.numero,
+                'comida': animal.comida
+            })
         else:
             return HttpResponseBadRequest()
 
