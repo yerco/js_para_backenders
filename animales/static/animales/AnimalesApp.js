@@ -96,8 +96,9 @@
                 contentType: "application/json",
                 headers: {"X-CSRFToken": csrftoken }
             })
-                .done(function(d) {
+                .done(function(data) {
                     that._clearForm();
+                    that._addRow(data);
                     console.log("ok");
                 })
                 .fail(function() {
@@ -145,6 +146,16 @@
             $form = this.$wrapper.find(this._selectors.newAnimalForm);
             $form[0].reset();
         },
+        _addRow: function(animales) {
+            console.log(animales);
+            let tplText = $("#js-animales-row-template").html();
+            let tpl = _.template(tplText);
+
+            let html = tpl(animales);
+            this.$wrapper.find('tbody').append($.parseHTML(html));
+            
+            this.updateTotalComida();
+        }
     });
     
     let Helper = function ($wrapper) {

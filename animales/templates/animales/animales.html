@@ -17,6 +17,23 @@
             let animalesApp = new AnimalesApp($wrapper);
         });
     </script>
+
+    <script type="text/template" id="js-animales-row-template">
+        <tr data-comida="<%= comida %>">
+            <td><%= id %></td>
+            <td><%= especie %></td>
+            <td><%= nombre %></td>
+            <td><%= numero %></td>
+            <td><%= comida %></td>
+            <td>
+                <a href="#"
+                   class="js-delete-row"
+                   data-url="delete/<% id %>">
+                    <span class="fa fa-trash"></span>
+                </a>
+            </td>
+        </tr>
+    </script>
 {% endblock %}
 
 {% block login %}
